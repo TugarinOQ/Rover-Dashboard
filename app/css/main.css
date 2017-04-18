@@ -1,0 +1,218 @@
+@import "fonts.css";
+
+body {
+    background: black;
+    color: #eaeaea;
+    font-family: "San Francisco", sans-serif;
+    font-weight: 100;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#app {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading > span {
+    font-size: 85px;
+}
+
+.dashboard {
+    width: 1280px;
+    height: 480px;
+    /*background: rgba(255,255,255,0.05);*/
+    position: relative;
+}
+
+.nightMode {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #101010;
+    border: 3px solid #1B1B1B;
+    /*box-shadow: inset 0 0 50px 0 #000000;*/
+    position: absolute;
+}
+.circle.big {
+    width: 300px;
+    height: 300px;
+}
+
+.circle {
+    position: relative;
+    display: inline-block;
+    margin-top: 100px;
+}
+.circle:first-of-type {
+    margin-left: 85px;
+}
+.circle:nth-child(3) {
+    margin-left: 200px;
+}
+
+.circle * > .tick {
+    width: 3px;
+    height: 140px;
+    border-radius: 5px;
+    position: absolute;
+    margin: 150px;
+    transform-origin: top;
+}
+.circle.fuel * > .tick, .circle.engineTemp * > .tick {
+    width: 2px;
+    height: 60px;
+    margin: 70px 69px;
+}
+.circle * > .tick > .inner {
+    background: #ff6f00;
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 3px 3px;
+}
+.circle * > .tick > .inner.transparent {
+    background: transparent !important;
+}
+.circle.fuel * > .tick > .inner, .circle.engineTemp * > .tick > .inner {
+    width: 2px;
+    height: 10px;
+}
+.circle * > .tick > .inner.middle {
+    width: 3px;
+    height: 10px;
+}
+.circle.fuel * > .tick > .inner.middle, .circle.engineTemp * > .tick > .inner.middle {
+    width: 2px;
+    height: 6px;
+}
+.circle * > .tick > .inner.min {
+    background: #803700;
+    width: 2px;
+    height: 5px;
+}
+.circle.fuel * > .tick > .inner.min, .circle.engineTemp * > .tick > .inner.min {
+    width: 1px;
+    height: 3px;
+}
+
+.circle * > .tick > .inner > span {
+    position: absolute;
+    display: block;
+    color: #b3b3b3;
+    left: 0;
+    top: -40px;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .3s;
+}
+.circle.fuel * > .tick > .inner > span, .circle.engineTemp * > .tick > .inner > span {
+    font-size: 15px;
+    top: -25px;
+}
+.circle.speedometer * > .tick > .inner > span {
+    font-size: 16px;
+    font-weight: 500;
+}
+.circle * > .tick.active25 span {
+     font-size: 27px;
+     top: -42px;
+}
+.circle * > .tick.active50 span {
+    font-size: 32px;
+    top: -47px;
+}
+.circle * > .tick.active100 span {
+    font-size: 25px !important;
+    top: -45px !important;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+.circle * > .tick.active > div {
+    background-color: #fff !important;
+}
+.circle .innerBorder {
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(39, 38, 39, 0.93);
+    border-radius: 50%;
+    position: absolute;
+}
+.circle.big .innerBorder {
+    width: 80%;
+    height: 80%;
+}
+.circle * > .tick > .inner.redZone,
+.circle * > .tick > .inner.redZone.min {
+    background: red;
+    width: 5px;
+    height: 10px;
+}
+
+
+
+
+arrow.arrow {
+    width: 4px;
+    height: 35px;
+    border-radius: 5px;
+    background: #fd6d00;
+    box-shadow: 0 0 10px red;
+    display: block;
+    transform-origin: top left;
+    margin: 70px;
+    position: absolute;
+    transition: all .3s;
+}
+arrow.arrow:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #2f2f2f;
+    background: #1f1e1d;
+    box-shadow: 0 -5px 10px #000000;
+    border-radius: 50%;
+    left: -7px;
+    top: -7px;
+}
+arrow.arrow.beautiful {
+    width: 5px;
+    height: 110px;
+    margin: 150px;
+}
+arrow.arrow.beautiful:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #2f2f2f;
+    background: #1f1e1d;
+    box-shadow: 0 -5px 20px #000000;
+    border-radius: 50%;
+    left: -18px;
+    top: -18px;
+}
